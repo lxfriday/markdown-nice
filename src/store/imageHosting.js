@@ -1,11 +1,11 @@
-import { observable, action } from "mobx";
-import { IMAGE_HOSTING_TYPE, ALIOSS_IMAGE_HOSTING, QINIUOSS_IMAGE_HOSTING, IMG_DOMAIN, IMG_NAMESPACE } from '../utils/constant'
+import {observable, action} from "mobx";
+import {IMAGE_HOSTING_TYPE, ALIOSS_IMAGE_HOSTING, QINIUOSS_IMAGE_HOSTING} from "../utils/constant";
 
 class ImageHosting {
-  @observable type= "SM.MS";
+  @observable type = "SM.MS";
 
   @action
-  setType = type => {
+  setType = (type) => {
     this.type = type;
   };
 }
@@ -23,7 +23,7 @@ if (!window.localStorage.getItem(ALIOSS_IMAGE_HOSTING)) {
     region: "",
     accessKeyId: "",
     accessKeySecret: "",
-    bucket: ""
+    bucket: "",
   });
   window.localStorage.setItem(ALIOSS_IMAGE_HOSTING, alioss);
 }
@@ -35,12 +35,26 @@ if (!window.localStorage.getItem(QINIUOSS_IMAGE_HOSTING)) {
     accessKey: "",
     secretKey: "",
     bucket: "",
-    domain: "",
+    domain: "http://",
     namespace: "",
   });
   window.localStorage.setItem(QINIUOSS_IMAGE_HOSTING, qiniuoss);
 }
 
+/* 用于平滑升级，因为之前缺少两个字段，将来删除 */
+const temQiniu = JSON.parse(window.localStorage.getItem(QINIUOSS_IMAGE_HOSTING));
+if (temQiniu.domain === undefined) {
+  const qiniuoss = JSON.stringify({
+    region: "",
+    accessKey: "",
+    secretKey: "",
+    bucket: "",
+    domain: "http://",
+    namespace: "",
+  });
+  window.localStorage.setItem(QINIUOSS_IMAGE_HOSTING, qiniuoss);
+}
+/* 用于平滑升级，因为之前缺少两个字段，将来删除 */
 
 store.type = window.localStorage.getItem(IMAGE_HOSTING_TYPE);
 

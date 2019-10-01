@@ -1,5 +1,4 @@
-export default 
-`/* 自定义样式，实时生效，浏览器实时缓存 */
+export default `/* 自定义样式，实时生效，浏览器实时缓存 */
 
 /* 全局属性
  * 页边距 padding: 30px;
@@ -137,4 +136,20 @@ table tr td {
 
 /* 脚注上标 */
 .footnote-ref {
-}`
+}
+
+/* "参考资料"四个字 */
+.footnotes-sep {
+}
+
+/* 参考资料编号 */
+.footnote-num {
+}
+
+/* 参考资料文字 */
+.footnote-item p { 
+}
+
+/* 参考资料解释 */
+.footnote-item p em {
+}`;

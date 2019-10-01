@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { observer, inject } from "mobx-react";
-import { Modal, Button } from "antd";
+import React, {Component} from "react";
+import {observer, inject} from "mobx-react";
+import {Modal, Button} from "antd";
 
 @inject("dialog")
 @observer
 class AboutDialog extends Component {
-  handleOk = e => {
+  handleOk = (e) => {
     this.props.dialog.setAboutOpen(false);
   };
 
-  handleCancel = e => {
+  handleCancel = (e) => {
     this.props.dialog.setAboutOpen(false);
   };
 
-  handleVersion = e => {
+  handleVersion = (e) => {
     this.props.dialog.setAboutOpen(false);
     this.props.dialog.setVersionOpen(true);
   };
@@ -33,10 +33,10 @@ class AboutDialog extends Component {
           </Button>,
           <Button key="submit" type="primary" onClick={this.handleOk}>
             确认
-          </Button>
+          </Button>,
         ]}
         bodyStyle={{
-          paddingTop: "5px"
+          paddingTop: "5px",
         }}
       >
         <h3 style={style.headerMargin}>
@@ -47,11 +47,7 @@ class AboutDialog extends Component {
             href="https://github.com/zhning12/markdown-nice"
             style={style.noBorder}
           >
-            <img
-              alt=""
-              style={style.img}
-              src="https://badgen.net/github/stars/zhning12/markdown-nice"
-            />
+            <img alt="" style={style.img} src="https://badgen.net/github/stars/zhning12/markdown-nice" />
           </a>
         </h3>
 
@@ -61,11 +57,7 @@ class AboutDialog extends Component {
         <h3 style={style.headerMargin}>我们</h3>
         <p style={style.lineHeight}>
           如果你喜欢我们的工具，欢迎关注
-          <a
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://github.com/zhning12/markdown-nice"
-          >
+          <a rel="noopener noreferrer" target="_blank" href="https://github.com/zhning12/markdown-nice">
             &nbsp;GitHub&nbsp;
           </a>
           和新项目
@@ -77,14 +69,22 @@ class AboutDialog extends Component {
           >
             &nbsp;Markdown 简历
           </a>
-          ，愿意
-          <strong style={style.strong}>微信打赏</strong>就更好啦。
+          ，同时我们也组建了「
+          <strong style={style.strong}>微信群</strong>
+          」，右下角扫一扫拉你入群，愿意
+          <strong style={style.strong}>微信打赏</strong>
+          就更好啦。
         </p>
-        <div style={{ display: "flex" }}>
+        <div style={{display: "flex", alignItems: "center"}}>
           <img
             alt="图片描述"
             style={style.imgWidth}
             src="https://draw-wechat.oss-cn-hangzhou.aliyuncs.com/%E6%89%93%E8%B5%8F%E4%BA%8C%E7%BB%B4%E7%A0%81_20190825201704.png"
+          />
+          <img
+            alt="图片描述"
+            style={style.imgWidth}
+            src="https://draw-wechat.oss-cn-hangzhou.aliyuncs.com/%E7%89%A7%E7%A0%81%E5%95%A6%E5%B0%8F%E5%8F%B7%E4%BA%8C%E7%BB%B4%E7%A0%81_20190929092055.JPG"
           />
         </div>
       </Modal>
@@ -95,27 +95,27 @@ class AboutDialog extends Component {
 const style = {
   imgWidth: {
     width: "50%",
-    height: "100%"
+    height: "100%",
   },
   headerMargin: {
     marginTop: "5px",
     marginBottom: "5px",
-    color: "black"
+    color: "black",
   },
   lineHeight: {
     lineHeight: "26px",
     color: "black",
     padding: 0,
-    margin: 0
+    margin: 0,
   },
   img: {
     width: "70px",
     marginLeft: "10px",
-    display: "inline-block"
+    display: "inline-block",
   },
   noBorder: {
-    border: "none"
-  }
+    border: "none",
+  },
 };
 
 export default AboutDialog;

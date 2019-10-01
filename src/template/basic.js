@@ -1,5 +1,4 @@
-export default
-`/*默认样式，最佳实践*/
+export default `/*默认样式，最佳实践*/
 
 /*全局属性*/
 .layout {
@@ -356,4 +355,8 @@ table tr th {
   color: black;
   word-break:break-all;
   width: calc(100%-50)
-}`
+}
+
+sub, sup {
+  line-height: 0;
+}`;

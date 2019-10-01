@@ -1,5 +1,4 @@
-export default 
-`使用时请将内容替换为自己的内容。
+export default `使用时请将内容替换为自己的内容。
 
 请阅读下方文本熟悉工具使用方法。
 
@@ -57,7 +56,7 @@ export default
 
 ## 6. 引用
 
-引用的格式是使用符号\`>\`后面书写文字，及可以使用引用。如下：
+引用的格式是在符号\`>\`后面书写文字。如下：
 
 > 读一本好书，就是在和高尚的人谈话。 ——歌德
 
@@ -87,7 +86,7 @@ export default
 
 脚注与链接的区别如下所示：
 
-\`\`\`md
+\`\`\`markdown
 链接：[文字](链接)
 脚注：[文字](脚注解释 "脚注名字")
 \`\`\`
@@ -120,14 +119,14 @@ export default
 |mdnice|图片只保存一天|
 |SM.MS|失败率高可用性很差|
 |阿里云|配置繁琐，费用昂贵|
-|七牛云|测试域名期限到了要换bucket|
+|七牛云|需要长期域名替代测试域名|
 
 **建议：一次性排版推荐使用mdnice，图片需要长期管理推荐使用七牛云**。
 
 配置文档如下：
 
 - [Markdown Nice新特性：阿里云图床](https://mp.weixin.qq.com/s/QPsOUkLCsvhqSicTOGaHJg)
-- Markdown Nice新特性：七牛云图床（待添加）
+- [Markdown Nice新特性：七牛云图床](https://mp.weixin.qq.com/s/_ytSpvKnzEVx0l_LONdnHg)
 
 注：图片粘贴到微信时会自动上传微信服务器，不必担心使用上述图床会导致微信内图片丢失。
 
@@ -137,7 +136,7 @@ export default
 
 Use the \`printf()\`  function.
 
-在需要高亮的代码块的前一行及后一行使用三个反引号，同时第一行反引号后面表面代码块所使用的语言，如下：
+在需要高亮的代码块的前一行及后一行使用三个反引号，同时**第一行反引号后面表面代码块所使用的语言**，如下：
 
 \`\`\`java
 // FileName: HelloWorld.java
@@ -147,6 +146,29 @@ public class HelloWorld {
     System.out.println("Hello,World!"); // 向控制台打印一条语句
   }
 }
+\`\`\`
+
+支持以下语言种类：
+
+\`\`\`
+bash
+clojure，cpp，cs，css
+dart，dockerfile
+erlang
+go，gradle，groovy
+haskell
+java，javascript，json，julia
+kotlin
+lisp，lua
+makefile，markdown，matlab
+objectivec
+perl，php，python
+r，ruby，rust
+scala，shell，sql，swift
+tex，typescript
+verilog，vhdl
+xml
+yaml
 \`\`\`
 
 如果想要更换代码主题，可在上方挑选，不支持代码主题自定义。
@@ -212,7 +234,7 @@ $$
 
 由于图片大小不固定，目前没有办法强制添加公式图片长度和宽度，所以拷贝过后需要在微信中调整公式大小。
 
-如果遇到第一次复制没有提示复制成功的现象，请再点击一次即可。
+**注：公式内不要有中文，行内公式不要有空格！**
 
 ## 17. TOC
 
@@ -239,4 +261,4 @@ Markdown Nice这么好用，简直是{喜大普奔|hē hē hē hē}呀！
 
 ## 20. UML
 
-不支持，推荐使用\`https://www.draw.io/\` 或 \`https://www.processon.com/\` 制作后再导入图片`;
+不支持，推荐使用开源工具\`https://draw.io/\`制作后再导入图片`;
